@@ -9,9 +9,11 @@ from Ground import Ground
 from Configs import *
 
 pygame.init()
+font = pygame.font.SysFont("monospace", 16)
+GREEN = (0,255,0)
+
 pygame.mixer.music.load("./sounds/cyberpunk-street.ogg")
 pygame.mixer.music.play(-1)
- 
 screen = pygame.display.set_mode(SCREEN_SIZE)
 
 bg_1_group = pygame.sprite.Group()
@@ -39,6 +41,7 @@ clock = pygame.time.Clock()
 def shouldKillSprite(sprite):
   return sprite.rect[0] < -(sprite.rect[2])
 
+score = 0
 
 while True:
   if shouldKillSprite(bg_1_group.sprites()[0]):
@@ -68,7 +71,7 @@ while True:
     else:
       newEnemy = Drone()  
     enemy_group.add(newEnemy)
-
+  
   bg_1_group.update()
   bg_2_group.update()
   bg_3_group.update()
@@ -81,12 +84,13 @@ while True:
   player_group.draw(screen)
   enemy_group.draw(screen)
   
+  scoretext = font.render(f"Score {score}", 1, GREEN)
+  screen.blit(scoretext, (5, 10))
+  score += 1
+
   pygame.display.update()
   clock.tick(FPS)
 
   if pygame.sprite.groupcollide(player_group, enemy_group, False, False, pygame.sprite.collide_mask):
-    print("GAME OVER")
-
-    ## testando algo
     enemy_group.remove(enemy_group.sprites()[0])
-    # break
+    score = 0
