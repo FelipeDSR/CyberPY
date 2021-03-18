@@ -3,6 +3,15 @@ from pygame.locals import *
 import sys
 
 class Input:
+  """
+    Essa classe gerencia todos os comandos acionados pelo jogador.
+
+    Constructor:
+      entity: é a entidade do jogador principal onde será possivel 
+        acionar métodos de gerenciamento de animações e ações. 
+        
+        ex: quando o jogador aciona a seta para baixo o personagem abaixa
+  """
   def __init__(self, entity):
     self.entity = entity
 
