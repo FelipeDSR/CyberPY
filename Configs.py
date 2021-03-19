@@ -1,6 +1,10 @@
-"""
-  Apenas constantes usadas no jogo.
-"""
+"""! @cyberPY Jogo cyberpunk 2D"""
+
+##
+# @file Configs.py
+#
+# @brief Arquivo com constantes usadas
+
 
 SCREEN_WIDTH = 600
 SCREEN_HEIGHT = 400

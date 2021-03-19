@@ -1,3 +1,10 @@
+"""! @cyberPY Jogo cyberpunk 2D"""
+
+##
+# @file Drone.py
+#
+# @brief Arquivo da classe do inimigo Drone
+
 from Enemy import Enemy
 
 class Drone(Enemy):

@@ -1,3 +1,10 @@
+"""! @cyberPY Jogo cyberpunk 2D"""
+
+##
+# @file YellowVehicle.py
+#
+# @brief Arquivo da classe do inimigo veículo amarelo
+
 from Enemy import Enemy
 
 class YellowVehicle(Enemy):
